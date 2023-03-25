@@ -10,7 +10,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 
-#define NITER  2
+#define NITER  5
 
 int main()
 {
