@@ -11,7 +11,7 @@
 int main()
 {
    char cmd[]= "ps -f";
-   /* char cmd[]= "ps -o pid,ppid,user,state,time,comm"; */
+   //char cmd[]= "ps -o pid,ppid,user,state,time,comm";
 
    printf("\nExecutando o comando \"%s\"\n",cmd);
    system(cmd);
