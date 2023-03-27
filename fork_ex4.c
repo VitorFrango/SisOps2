@@ -15,13 +15,15 @@ int main() {
         exit(EXIT_FAILURE);
     }
     else if (pid == 0) { // processo filho
-        printf("Eu sou o processo filho!\n");
-        execlp("/bin/ls", "ls", "-la", NULL); // substitui a imagem do processo filho com o programa ls
+        printf("Eu sou o processo filho e tenho o PID=%5d\n", (int) getpid());
+       // execlp("/bin/ls", "ls", "-la", NULL); // substitui a imagem do processo filho com o programa ls
         perror("exec"); // se o execlp() falhar, imprime o erro
         exit(EXIT_FAILURE);
     }
     else { // processo pai
-        printf("Eu sou o processo pai, meu filho tem o PID %d\n", pid);
+        printf("Eu sou o processo pai e tenho o PID=%5d\n", (int) getpid());
+        printf("O meu filho tem o PID=%5d\n", (int) getpid());
+        printf("O meu filho tem o PPID=%5d\n", (int) getppid());
         exit(EXIT_SUCCESS);
     }
 
