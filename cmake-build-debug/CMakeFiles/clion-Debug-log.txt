@@ -1,4 +1,28 @@
 "/Users/vitorfrango/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/vitorfrango/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja -S /Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps -B /Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps/cmake-build-debug
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps/cmake-build-debug
+CMake Error at CMakeLists.txt:7 (add_executable):
+  add_executable cannot create target "SisOps" because another target with
+  the same name already exists.  The existing target is an executable created
+  in source directory
+  "/Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps".
+  See documentation for policy CMP0002 for more details.
+
+
+CMake Error at CMakeLists.txt:8 (add_executable):
+  add_executable cannot create target "SisOps" because another target with
+  the same name already exists.  The existing target is an executable created
+  in source directory
+  "/Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps".
+  See documentation for policy CMP0002 for more details.
+
+
+CMake Error at CMakeLists.txt:9 (add_executable):
+  add_executable cannot create target "SisOps" because another target with
+  the same name already exists.  The existing target is an executable created
+  in source directory
+  "/Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps".
+  See documentation for policy CMP0002 for more details.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps/cmake-build-debug/CMakeFiles/CMakeError.log".

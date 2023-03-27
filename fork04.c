@@ -30,6 +30,7 @@ int main()
       printf("Codigo do Pai  :  Terminado sleep(8)\n");
    }
    else {
+
       /* pid=0, codigo para o processo filho */
       printf("Codigo do Filho:  PID=%5d  PPID=%5d\n", \
          (int) getpid(), (int) getppid());
