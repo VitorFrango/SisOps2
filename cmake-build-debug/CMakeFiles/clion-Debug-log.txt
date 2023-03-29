@@ -15,6 +15,12 @@ CMake Error at CMakeLists.txt:8 (add_executable):
   See documentation for policy CMP0002 for more details.
 
 
+CMake Error at CMakeLists.txt:9 (add_executable):
+  The target name "SisOps/EfolioA" is reserved or not valid for certain CMake
+  features, such as generator expressions, and may result in undefined
+  behavior.
+
+
 -- Configuring incomplete, errors occurred!
 See also "/Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps/cmake-build-debug/CMakeFiles/CMakeOutput.log".
 See also "/Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps/cmake-build-debug/CMakeFiles/CMakeError.log".
