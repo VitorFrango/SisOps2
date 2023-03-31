@@ -4,49 +4,64 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 int main(int argc, char *argv[]) {
-    int n;
-    pid_t pid_B, pid_C, pid_D;
+    pid_t pid1, pid2, pid3;
 
     // Verifica se o número de argumentos é correto
     if (argc != 2) {
-        printf("Uso: ./gsn n\n");
+        printf("Número incorreto de argumentos. Use: %s <n>\n", argv[0]);
         exit(1);
     }
 
-    // Converte o argumento para inteiro
-    n = atoi(argv[1]);
+    // Converte o argumento para um número inteiro
+    int n = atoi(argv[1]);
 
-    // Verifica se n é positivo
+    // Verifica se o valor de n é válido
     if (n <= 0) {
-        printf("n deve ser maior que zero.\n");
+        printf("O valor de n deve ser positivo.\n");
         exit(1);
     }
 
-    // Passo A
-    pid_B = fork();
-    if (pid_B == 0) {
-        // Passo B
-        execl("/bin/head", "head", "/dev/urandom", "-c", argv[1], NULL);
+    // Passo 1: head -c NNN /dev/urandom >tmp.bin
+    printf("Processo A: PID=%d PPID=%d\n", getpid(), getppid());
+    fflush(stdout);
+    if ((pid1 = fork()) == 0) {
+        freopen("tmp.bin", "w", stdout);
+        execl("/usr/bin/head", "head", "-c", argv[1], "/dev/urandom", NULL);
     } else {
-        wait(NULL);
-        pid_C = fork();
-        if (pid_C == 0) {
-            // Passo C
-            execl("/bin/hexdump", "hexdump", "-e", "'1/4 \"%d \"'", NULL);
-        } else {
-            wait(NULL);
-            pid_D = fork();
-            if (pid_D == 0) {
-                // Passo D
-                execl("/bin/sort", "sort", NULL);
-            } else {
-                wait(NULL);
-                printf("\n");
-            }
-        }
+        waitpid(pid1, NULL, 0);
+    }
+
+    // Passo 2: hexdump -v -e "/1 \"%d\\n\"" <tmp.bin >tmp.txt
+    printf("Processo B: PID=%d PPID=%d\n", getpid(), getppid());
+    fflush(stdout);
+    if ((pid2 = fork()) == 0) {
+        freopen("tmp.txt", "w", stdout);
+        execl("/usr/bin/hexdump", "hexdump", "-v", "-e", "/1 \"%d\\n\"", "<", "tmp.bin", NULL);
+    } else {
+        waitpid(pid2, NULL, 0);
+    }
+
+    // Passo 3: sort -g tmp.txt
+    printf("Processo C: PID=%d PPID=%d\n", getpid(), getppid());
+    fflush(stdout);
+    if ((pid3 = fork()) == 0) {
+        execl("/usr/bin/sort", "sort", "-g", "tmp.txt", NULL);
+    } else {
+        waitpid(pid3, NULL, 0);
+    }
+
+    // Imprime a lista ordenada em decimal na saída padrão
+    printf("Processo A: Lista ordenada em decimal:\n");
+    fflush(stdout);
+    freopen("tmp.txt", "r", stdin);
+    int num;
+    while (scanf("%d", &num) == 1) {
+        printf("%d\n", num);
     }
 
     return 0;
+
 }
