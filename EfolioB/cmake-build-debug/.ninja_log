@@ -1,0 +1,8 @@
+# ninja log v5
+0	274	1683380655932662527	CMakeFiles/EfolioB.dir/main.c.o	ee5d9f37fb9a93c9
+2	291	1683479956858915430	CMakeFiles/EfolioB.dir/mtts.c.o	c21d65f69d669cc3
+274	306	1683380655967466897	EfolioB	e33a25797bbe971f
+2	336	1683457827598157593	CMakeFiles/EfolioB.dir/mtts2.c.o	197c5df39fdd5ed8
+2	332	1683444023609907510	CMakeFiles/EfolioB.dir/mtts1.c.o	fea7c639b4ca8396
+1	271	1683482748822740227	CMakeFiles/EfolioB.dir/mtts.c.o	c21d65f69d669cc3
+2	271	1683482748823646986	CMakeFiles/EfolioB.dir/pre_final.c.o	5a9dc1b87050f3a8

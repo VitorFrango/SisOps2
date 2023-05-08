@@ -1,0 +1,3 @@
+/Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps/EfolioB/cmake-build-debug/CMakeFiles/EfolioB.dir
+/Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps/EfolioB/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps/EfolioB/cmake-build-debug/CMakeFiles/rebuild_cache.dir

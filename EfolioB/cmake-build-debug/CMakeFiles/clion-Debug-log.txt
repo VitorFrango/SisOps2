@@ -1,0 +1,4 @@
+"/Users/vitorfrango/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/vitorfrango/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja -S /Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps/EfolioB -B /Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps/EfolioB/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/vitorfrango/Library/CloudStorage/OneDrive-Personal/programacao/SisOps/EfolioB/cmake-build-debug
