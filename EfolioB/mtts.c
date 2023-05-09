@@ -109,7 +109,7 @@ int main(int argc, char *argv[]) {
     tam_bloco = (buf_size + nt + 1) / nt; // define o tamanho do bloco para cada thread
 
 
-    printf("\n\nAnálise de letras do alfabeto com %d tarefas e blocos de %d caracteres\n", nt, tam_bloco);
+    printf("\n\nAnálise de letras do alfabeto com %d tarefas e blocos de %d caracteres\n", nt, nc);
     printf("\n\nFicheiro %s (%d bytes)\n", argv[3], buf_size);
     printf("\n\nRelatório de tarefas:\n");
 
