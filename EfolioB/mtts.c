@@ -113,13 +113,16 @@ int main(int argc, char *argv[]) {
     printf("\n\nFicheiro %s (%d bytes)\n", argv[3], buf_size);
     printf("\n\nRelatório de tarefas:\n");
 
+    // Inicializa um objeto mutex chamado lock
     pthread_mutex_init(&lock, NULL);
 
+    // Cria nt threads e as executa na função trabalhadora
     for (i = 0; i < nt; i++) {
         ids[i] = i;
         pthread_create(&threads[i], NULL, trabalhadora, &ids[i]);
     }
 
+    // Aguarda cada thread terminar sua execução
     for (i = 0; i < nt; i++) {
         pthread_join(threads[i], NULL);
     }
@@ -130,9 +133,10 @@ int main(int argc, char *argv[]) {
         printf("%c =  %7.3f%%\n", 'A' + i, ((float) frequencias[i] / buf_size) * 100);
     }
 
+    // Liberta a memória alocada dinamicamente para o buffer e fecha o arquivo
     free(buf);
     fclose(f);
-    pthread_mutex_destroy(&lock);
+    pthread_mutex_destroy(&lock);// Destrói o objeto mutex lock
 
     return 0;
 }
